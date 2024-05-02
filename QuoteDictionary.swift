@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class QuoteDictionary: ObservableObject {
+    @Published var quotes: [String: Quote]
+    
+    init(quotes: [String: Quote] = [:]) {
+        self.quotes = quotes
+    }
+}

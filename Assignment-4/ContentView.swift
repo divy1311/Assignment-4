@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var favorites: [Favorite] = []
+    @State var portfolio: [Portfolio] = []
+    
+    @State var isActive = true
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if isActive {
+                SplashScreenView()
+            } else {
+                HomeView()
+            }
         }
-        .padding()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            isActive = false
+            }
+        }
     }
 }
 

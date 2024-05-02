@@ -12,6 +12,8 @@ struct Assignment_4App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ViewModel())
+                .environmentObject(PortfolioViewModel())
         }
     }
 }

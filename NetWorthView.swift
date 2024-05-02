@@ -7,11 +7,18 @@
 
 import SwiftUI
 
-struct WalletView: View {
+struct NetWorthView: View {
+    @State var wallet: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }.onAppear {
-        getWallet()
+        Text("Net Worth")
+            .font(.title2)
+        Text(wallet)
+            .bold()
+            .font(.title2)
+            .onAppear {
+                getWallet()
+            }
     }
     
     private func getWallet() {
@@ -27,6 +34,7 @@ struct WalletView: View {
         }
     }
 }
+
 #Preview {
-    WalletView()
+    NetWorthView()
 }
